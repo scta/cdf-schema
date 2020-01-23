@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar 
+  xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  xmlns:dc="http://dublincore.org/2012/06/14/dcelements#"
+  datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <element name="codex" xmlns="http://relaxng.org/ns/structure/1.0">
+      <element name="head">
+        <element name="type">
+          <text/>
+        </element>
+        <element name="shortid">
+          <optional>
+            <attribute name="alias"/>
+          </optional>
+          <text/>
+        </element>
+        <element name="title">
+          <text/>
+        </element>
+        <optional>
+          <element name="initial"><!-- depreciated; should be removed -->
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="place">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="date">
+            <text/>
+          </element>
+        </optional>
+        <optional>
+          <element name="description">
+            <text/>
+          </element>
+        </optional>
+        <element name="hasItems">
+          <oneOrMore>
+            <element name="item">
+              <optional>
+                <element name="label">
+                  <text/>
+                </element>
+              </optional>
+              <element name="canonical">
+                <text/>
+              </element>
+              <element name="shortid">
+                <text/>
+              </element>
+              <optional>
+                <element name="holdingInstitution">
+                  <text/>
+                </element>
+              </optional>
+              <optional>
+                <element name="callNumber">
+                  <text/>
+                </element>
+              </optional>
+              <optional>
+                <element name="canvasBase">
+                  <text/>
+                </element>
+              </optional>
+              <optional>
+                <element name="manifestOfficial">
+                  <text/>
+                </element>
+              </optional>
+            </element>
+          </oneOrMore>
+        </element>
+      </element>
+      <element name="surfaces">
+        <optional>
+          <oneOrMore>
+            <element name="surface">
+              <element name="shortid">
+                <text/>
+              </element>
+              <element name="label">
+                <text/>
+              </element>
+              <element name="hasISurfaces">
+                <oneOrMore>
+                  <element name="ISurface">
+                    <element name="shortid">
+                      <text/>
+                    </element>
+                    <element name="canonical">
+                      <text/>
+                    </element>
+                    <element name="canvasslug">
+                      <text/>
+                    </element>
+                  </element>
+                </oneOrMore>
+              </element>
+            </element>
+          </oneOrMore>
+        </optional>
+      </element>
+    </element>
+  </start>
+</grammar>
